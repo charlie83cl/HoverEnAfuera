@@ -1,0 +1,43 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cursor Hover En Afuera</title>
+    <!--LINK DE BOOTSTRAP-->
+    <link rel="stylesheet" href="styles.css">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.css" rel="stylesheet">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.js"></script>
+<script>
+    $(document).ready(function(){
+      $("img").hover(function(){
+
+        /**con estas 2 variables copiadas del profe se consigue llamar a ambas fuentes de 
+         * imagenes para que sean reconocidas por el llamado this mas abajo. 
+         * de otra forma no las llama**/
+        var img_base = $(this).attr('src');
+        var img_alterna = $(this).attr('data-alt-src');
+
+        $(this).attr('src', img_alterna);
+        $(this).attr('data-alt-src', img_base);
+      });
+    });
+    </script>
+
+</head>
+<body>
+    
+    <div class="text-center container bg-dark">
+        <h1 class="bg-danger text-center">PRACTICANDO CON JQUERY</h1>
+        <div class="row">
+            <div class="col-12">
+            <img id="img" src="img/goku0.jfif" data-alt-src="img/goku0.png" alt="version1">
+            <img id="img" src="img/trunk1.jfif" data-alt-src="img/trunk1.png" alt="version2">
+            <img id="img" src="img/hame4.jfif" data-alt-src="img/hame4_.jfif" alt="version3">
+            <img id="img" src="img/vegeta3.jfif" data-alt-src="img/rikun3.jfif" alt="version4">
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
